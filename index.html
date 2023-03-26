@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+<body>
+<div class="banner">
+  <div class="banner__content">
+    <div class="banner__text">
+      <section>
+        <!-- Side Nav -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">Bus 147 --> south</a>
+          <a href="#">Bus 146 --> North</a>
+          <a href="#">Bus 115 --> North</a>
+
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <!-- Title and Search -->
+        <h2 class="center">LUC CTA Tracker</h2>
+        <div class="search-container">
+          <input type="text" class="form-control" placeholder="Search for station or destination">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+<!-- ^^^Search and Title was moved up to <head>Section^^^ -->
+<!-- ^^^Side Nav was moved up to <head>Section^^^ -->
+<main class="container">
+  <section>
+    <!--Google Map-->
+    <div id="map"></div>
+  </section>
+  <section>
+
+    <h2 class="center">Current Location of Public Transportation</h2>
+    <div class="center">
+      <button class="btn btn-icon btn-bus mr-2 ">
+        <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
+      </button>
+      <button class="btn btn-icon btn-train ml-2">
+        <img src="img/train-solid.svg" alt="train icon" class="train-icon">
+      </button>
+    </div>
+
+    <table class="table">
+      <thead >
+      <tr>
+
+        <th >Bus Number </th>
+        <th >Arrival Time</th>
+        <th >Delay Percentage</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td > 147</td>
+        <td >14 min</td>
+        <td >10%</td>
+      </tr>
+      <tr>
+        <td>146</td>
+        <td >30 min</td>
+        <td >20%</td>
+      </tr>
+      <tr>
+        <td>151</td>
+        <td >14 min</td>
+        <td >5%</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="center">Delay Percentage</h2>
+    <div class="alert alert-danger" role="alert">
+      The current public transportation has a delay of <span id="delay-percentage">0%</span>.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="center">Arrival Time</h2>
+    <p class="center">The next bus will arrive in <span id="arrival-time"></span> minutes.</p>
+  </section>
+
+</main>
+
+<footer class="bg-primary text-white py-3">
+  <div class="container text-center">
+    <p>&copy; 2023 LUC CTA</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeyI491Z76t3oIXEV29ANCPVD6qgMLA3M" async defer></script>
+
+<script>
+
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
