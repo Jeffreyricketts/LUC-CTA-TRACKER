@@ -79,6 +79,13 @@ h2 {
   color: #ffffff;
 }
 
+#redLineDesignation {
+  color: darkred;
+  margin-bottom: 3px;
+  border-bottom: 2px solid gray;
+  padding: 5px
+}
+
 /* Navbar Styles */
 
 .navbar {

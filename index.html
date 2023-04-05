@@ -42,15 +42,12 @@
 
     <h2 class="center">Current Location of Public Transportation</h2>
     <div class="center">
-      <button class="btn btn-icon btn-bus mr-2 ">
+      <button class="btn btn-icon btn-bus mr-2" id="busIcon">
         <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
-      </button>
-      <button class="btn btn-icon btn-train ml-2">
-        <img src="img/train-solid.svg" alt="train icon" class="train-icon">
       </button>
     </div>
 
-    <table class="table">
+    <table class="table" id="busTimeTable">
       <thead >
       <tr>
 
@@ -74,6 +71,38 @@
         <td>151</td>
         <td >14 min</td>
         <td >5%</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="center" id="trainIcon">
+      <button class="btn btn-icon btn-train ml-2">
+        <img src="img/train-solid.svg" alt="train icon" class="train-icon">
+      </button>
+    </div>
+    <h3 class="center" id="redLineDesignation">Red Line</h3>
+    <table class="table" id="redLineTimeTable">
+      <thead >
+      <tr>
+        <th >Train Stop</th>
+        <th >Train Route</th>
+        <th> Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td > Loyola</td>
+        <td >Service to Howard</td>
+        <td >4:34 PM</td>
+      </tr>
+      <tr>
+        <td>Chicago & State</td>
+        <td >Service to Howard</td>
+        <td >4:36 PM</td>
+      </tr>
+      <tr>
+        <td>Loyola</td>
+        <td >Service to 95th & Dan Ryan</td>
+        <td >4:41 PM</td>
       </tr>
       </tbody>
     </table>
