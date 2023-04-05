@@ -179,16 +179,12 @@ h2 {
 .btn-bus {
   width: 30px;
   height: 30px;
-  background-color: rgba(176, 176, 176, 0.4);
-  border: rgba(0, 0, 0, 0.6);
   font-size: 20px;
 }
 
 .btn-train {
   width: 30px;
   height: 30px;
-  background-color: rgba(176, 176, 176, 0.4);
-  border: rgba(0, 0, 0, 0.6);
   font-size: 20px;
 }
 
