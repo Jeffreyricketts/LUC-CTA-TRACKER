@@ -40,68 +40,168 @@
   </section>
   <section>
 
-    <h2 class="center" style="color: #4e555b">Current Location of Public Transportation</h2>
-    <div class="center">
-      <button class="btn btn-icon btn-bus mr-2" id="busIcon">
-        <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
-      </button>
-    </div>
-    <h3 class="routeDesignation busDesignation" id="147Designation">147 Bus</h3>
-    <table class="table" id="busTimeTable">
-      <thead >
-      <tr>
-        <th >Bus Stop</th>
-        <th >Bus Route</th>
-        <th >Arrival Time</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td > Sheridan & Loyola</td>
-        <td >Service to Congress Plaza</td>
-        <td >5:28 PM</td>
-      </tr>
-      <tr>
-        <td>Sheridan & Loyola</td>
-        <td >Service to Sheridan & Winthrop</td>
-        <td >5:33 PM</td>
-      </tr>
-      <tr>
-        <td>Michigan & Van Buren</td>
-        <td >Service to Michigan & Balbo</td>
-        <td >5:41 PM</td>
-      </tr>
-      </tbody>
-    </table>
+    <h4 class="center">Lakeshore Campus</h4>
+
     <div class="center" id="trainIcon">
       <button class="btn btn-icon btn-train ml-2">
         <img src="img/train-solid.svg" alt="train icon" class="train-icon">
       </button>
     </div>
-    <h3 class="routeDesignation trainDesignation" id="redLineDesignation">Red Line</h3>
+    <h3 class="routeDesignation trainDesignation" id="redLineDesignation">Red Line -- Loyola Station</h3>
     <table class="table" id="redLineTimeTable">
       <thead >
       <tr>
-        <th >Train Stop</th>
-        <th >Train Route</th>
-        <th> Arrival Time</th>
+        <th >Route</th>
+        <th>Arrival Time</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td >Loyola</td>
         <td >Service to Howard</td>
         <td >4:34 PM</td>
       </tr>
       <tr>
-        <td>Chicago & State</td>
         <td >Service to Howard</td>
         <td >4:36 PM</td>
       </tr>
       <tr>
-        <td>Loyola</td>
         <td >Service to 95th & Dan Ryan</td>
         <td >4:41 PM</td>
+      </tr>
+      <tr>
+        <td >Service to 95th & Dan Ryan</td>
+        <td >4:41 PM</td>
+      </tr>
+      <tr>
+        <td >Service to 95th & Dan Ryan</td>
+        <td >4:41 PM</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+    <div class="center">
+      <button class="btn btn-icon btn-bus mr-2" id="busIcon">
+        <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation busDesignation" id="147Designation">Sheridan & Winthrop Stop (Southbound)</h3>
+    <table class="table" id="busTimeTable">
+      <thead >
+      <tr>
+        <th >Bus</th>
+        <th >Route</th>
+        <th >Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="147bus1name"> Sheridan & Loyola</td>
+        <td id="147bus1route">Service to Congress Plaza</td>
+        <td id="147bus1arvltm">5:28 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus2name">Sheridan & Loyola</td>
+        <td id="147bus2route">Service to Sheridan & Winthrop</td>
+        <td id="147bus2arvltm">5:33 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus3name">Michigan & Van Buren</td>
+        <td id="147bus3route">Service to Michigan & Balbo</td>
+        <td id="147bus3arvltm">5:41 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus4name">Michigan & Van Buren</td>
+        <td id="147bus4route">Service to Michigan & Balbo</td>
+        <td id="147bus4arvltm">5:41 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus5name">Michigan & Van Buren</td>
+        <td id="147bus5route">Service to Michigan & Balbo</td>
+        <td id="147bus5arvltm">5:41 PM</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h4 class="center">Water Tower Campus</h4>
+
+    <div class="center" id="trainIcon">
+      <button class="btn btn-icon btn-train ml-2">
+        <img src="img/train-solid.svg" alt="train icon" class="train-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation trainDesignation" id="redLineDesignation">Red Line -- Chicago/State Station</h3>
+    <table class="table" id="redLineTimeTable">
+      <thead >
+      <tr>
+        <th >Route</th>
+        <th>Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td >Service to Howard</td>
+        <td >4:34 PM</td>
+      </tr>
+      <tr>
+        <td >Service to Howard</td>
+        <td >4:36 PM</td>
+      </tr>
+      <tr>
+        <td >Service to 95th & Dan Ryan</td>
+        <td >4:41 PM</td>
+      </tr>
+      <tr>
+        <td >Service to 95th & Dan Ryan</td>
+        <td >4:41 PM</td>
+      </tr>
+      <tr>
+        <td >Service to 95th & Dan Ryan</td>
+        <td >4:41 PM</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="center">
+      <button class="btn btn-icon btn-bus mr-2" id="busIcon">
+        <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation busDesignation" id="147Designation">Michigan & Chestnut Stop (Northbound)</h3>
+    <table class="table" id="busTimeTable">
+      <thead >
+      <tr>
+        <th >Bus</th>
+        <th >Route</th>
+        <th >Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="147bus1name"> Sheridan & Loyola</td>
+        <td id="147bus1route">Service to Congress Plaza</td>
+        <td id="147bus1arvltm">5:28 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus2name">Sheridan & Loyola</td>
+        <td id="147bus2route">Service to Sheridan & Winthrop</td>
+        <td id="147bus2arvltm">5:33 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus3name">Michigan & Van Buren</td>
+        <td id="147bus3route">Service to Michigan & Balbo</td>
+        <td id="147bus3arvltm">5:41 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus4name">Michigan & Van Buren</td>
+        <td id="147bus4route">Service to Michigan & Balbo</td>
+        <td id="147bus4arvltm">5:41 PM</td>
+      </tr>
+      <tr>
+        <td id="147bus5name">Michigan & Van Buren</td>
+        <td id="147bus5route">Service to Michigan & Balbo</td>
+        <td id="147bus5arvltm">5:41 PM</td>
       </tr>
       </tbody>
     </table>
