@@ -19,5 +19,8 @@ function popTrainData(json, campus) {
     }
 }
 
+//Chicago red line stop ID: 41450
+//Loyola red line stop ID: 41300
+
 loadTrainDataAtStop(41300, 'lsc');
 loadTrainDataAtStop(41450, 'wtc');
