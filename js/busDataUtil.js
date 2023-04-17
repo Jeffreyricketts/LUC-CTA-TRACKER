@@ -3,6 +3,7 @@ async function loadBusDataAtStop(stopID, routeID, campus) {
         const response = await fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
         const json = await response.text();
         popBusData(json, campus);
+        console.log('CTA bus data received successfully!');
     } catch (err) {
         console.log(err);
     }
