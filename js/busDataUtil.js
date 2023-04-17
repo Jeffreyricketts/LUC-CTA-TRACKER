@@ -1,7 +1,11 @@
 async function loadBusDataAtStop(stopID, routeID, campus) {
-    const response = await fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
-    const json = await response.text();
-    popBusData(json, campus);
+    try {
+        const response = await fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
+        const json = await response.text();
+        popBusData(json, campus);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time with am/pm designation

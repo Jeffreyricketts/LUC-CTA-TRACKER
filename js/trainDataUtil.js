@@ -1,9 +1,13 @@
 async function loadTrainDataAtStop(stopID, campus) {
-    const response = await fetch(`https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=dd4939ade14e4384836da74b33ef078a&mapid=${stopID}&max=5&outputType=JSON`);
-    const json = await response.json();
-    console.log(JSON.stringify(json));
-    console.log(json)
-    popTrainData(json, campus);
+    try {
+        const response = await fetch(`https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=dd4939ade14e4384836da74b33ef078a&mapid=${stopID}&max=5&outputType=JSON`);
+        const json = await response.json();
+        console.log(JSON.stringify(json));
+        console.log(json)
+        popTrainData(json, campus);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 // Parses the JSON received with train data
