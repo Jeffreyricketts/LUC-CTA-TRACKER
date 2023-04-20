@@ -29,6 +29,7 @@ Also, if accessing the site between ~12:45am-5:00am, it is likely there will not
 
 ## Project TODOs:
 - [x] Refactor project to be consistent with responsive design patterns
+- [x] Activating the map  and the search field.
 - [x] Finish implementing CTA API scripts to pull, parse, and display all bus, train data to the site.
 - [ ] Find new/unique fonts to ues throughout the site
 - [ ] Work on embedding images where beneficial to overall site design
