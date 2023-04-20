@@ -19,43 +19,27 @@
           <a href="#">Bus 115 --> North</a>
 
         </div>
-        <span style="font-size:30px;cursor:pointer; color: white" onclick="openNav()">&#9776;</span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <!-- Title and Search -->
         <h2 class="center">LUC CTA Tracker</h2>
         <div class="search-container">
-<!--  Do not touch this div         -->
-          <div hidden="hidden" id="floating-panel">
-            <b>Mode of Travel: </b>
-            <select id="mode">
-              <option selected value="TRANSIT">Transit</option>
-            </select>
-          </div>
-<!--    end      -->
-
-          <select id="select_camp" class="form-control" name="option">
-       <option  disabled selected >Search your destination</option>
-            <option  value="1">Lakeshore Campus</option>
-            <option  value="2">Water Tower Campus</option>
-          </select>
+          <input type="text" class="form-control" placeholder="Search for station or destination">
           <button type="submit" class="btn btn-primary">Search</button>
-
         </div>
-      </section></div>
+      </section>
+
     </div>
   </div>
 </div>
-
-
 <!-- ^^^Search and Title was moved up to <head>Section^^^ -->
 <!-- ^^^Side Nav was moved up to <head>Section^^^ -->
-
-
 <main class="container">
   <section>
     <!--Google Map-->
     <div id="map"></div>
   </section>
   <section>
+
     <h4 class="center">Lakeshore Campus</h4>
 
     <div class="center" id="trainIcon">
@@ -242,10 +226,10 @@
     <p class="center">&copy; 2023 LUC CTA</p>
   </div>
 </footer>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeyI491Z76t3oIXEV29ANCPVD6qgMLA3M&callback=initMap&v=weekly" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeyI491Z76t3oIXEV29ANCPVD6qgMLA3M" async defer></script>
 
 <script>
 
