@@ -75,7 +75,7 @@ h4 {
   font-size: 3em;
   font-family: Copperplate, sans-serif;
   margin: 15px;
-  border: 2px solid gray;
+  border: 3px solid black;
   border-radius: 6px;
 }
 
@@ -259,7 +259,7 @@ h4 {
 }
 
 .timetable {
-  border-top: 3px solid gray;
+  border-top: 3px solid lightgray;
 }
 
 /* Map Section Styles */
