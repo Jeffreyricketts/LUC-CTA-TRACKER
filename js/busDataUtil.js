@@ -1,12 +1,7 @@
 async function loadBusDataAtStop(stopID, routeID, campus) {
-    try {
-        const response = await fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
-        const json = await response.text();
-        popBusData(json, campus);
-        console.log('CTA bus data received successfully!');
-    } catch (err) {
-        console.log(err);
-    }
+    const response = await fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
+    const json = await response.text();
+    popBusData(json, campus);
 }
 
 function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time with am/pm designation
@@ -17,8 +12,8 @@ function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time
         return `${hours}${mins} PM`;
     }else if (hours === 12) { // Case for times during the noon hour
         return `${time} PM`;
-    } else if (hours <= 12) { // Case for all AM times
-        return `${hours+12 % 13}${mins} AM`; // TODO:  Tentative solution --> may need fixing
+    } else { // Case for all AM times
+        return `${time} AM`;
     }
 }
 
