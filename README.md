@@ -30,6 +30,6 @@ The CORS Unblock browser extension for chrome can be found here: [CORS Unblocker
 - [x] Finish implementing CTA API scripts to pull, parse, and display all bus, train data to the site.
 - [ ] Find new/unique fonts to ues throughout the site
 - [ ] Work on embedding images where beneficial to overall site design
-- [ ] Create links in side navigation menu to points in the DOM where the respective routes can be found
+- [x] Create links in side navigation menu to points in the DOM where the respective routes can be found
 - [ ] Decide on final order of elments in the website (ie. CTA info before or after Google map)
 - [ ] Implement MTA vs CTA statistics (which train will arrive first, which line has a higher % of current delays)
