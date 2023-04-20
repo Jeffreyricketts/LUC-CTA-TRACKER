@@ -327,8 +327,12 @@ p {
   border-radius: 10px;
 }
 
-.refresh-button:active {
+.refresh-button:hover {
   background-color: lightgray;
+}
+
+.refresh-button:active {
+  background-color: grey;
 }
 
 /* Table Styles */
