@@ -63,8 +63,8 @@ function initMap() {
   var longitude;
   navigator.geolocation.getCurrentPosition(
       function (position) {
-         latitude = position.coords.latitude;
-         longitude = position.coords.longitude;
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
         console.log('Latitude:', position.coords.latitude);
         console.log('Longitude:', position.coords.longitude);
       });
@@ -88,41 +88,41 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, lang, l
 
   console.log(lang);
   console.log(long);
-    var select_campus = document.getElementById('select_camp').value;
+  var select_campus = document.getElementById('select_camp').value;
   // console.log('Here seclect campus');
   // console.log(select_campus);
-    var lat_d ;
-    var lon_d ;
-    if (select_campus == 1){
-        lat_d = 41.9989483;
-        lon_d = -87.6608341;
-    }else if (select_campus == 2){
-        lat_d = 41.8975944;
-        lon_d = -87.6291794;
-    }else{
+  var lat_d ;
+  var lon_d ;
+  if (select_campus == 1){
+    lat_d = 41.9989483;
+    lon_d = -87.6608341;
+  }else if (select_campus == 2){
+    lat_d = 41.8975944;
+    lon_d = -87.6291794;
+  }else{
 
-    }
+  }
 
 
-        directionsService
-            .route({
-                origin: {lat: 41.9756854, lng: -87.6523867},
+  directionsService
+      .route({
+        origin: {lat: 41.9756854, lng: -87.6523867},
 
-                destination: {lat: lat_d, lng: lon_d},
-                // Note that Javascript allows us to access the constant
-                // using square brackets and a string value as its
-                // "property."
-                transitOptions: {
-                    // departureTime: new Date(1337675679473),
-                    modes: ['BUS'],
-                    routingPreference: 'FEWER_TRANSFERS'
-                },
-                travelMode: google.maps.TravelMode[selectedMode],
-            })
-            .then((response) => {
-                directionsRenderer.setDirections(response);
-            })
-        // .catch((e) => window.alert("Directions request failed due to " + status));
+        destination: {lat: lat_d, lng: lon_d},
+        // Note that Javascript allows us to access the constant
+        // using square brackets and a string value as its
+        // "property."
+        transitOptions: {
+          // departureTime: new Date(1337675679473),
+          modes: ['BUS'],
+          routingPreference: 'FEWER_TRANSFERS'
+        },
+        travelMode: google.maps.TravelMode[selectedMode],
+      })
+      .then((response) => {
+        directionsRenderer.setDirections(response);
+      })
+  // .catch((e) => window.alert("Directions request failed due to " + status));
 
 }
 
@@ -153,8 +153,8 @@ function calcRoute() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
-    'Error: The Geolocation service failed.' :
-    'Error: Your browser doesn\'t support geolocation.');
+      'Error: The Geolocation service failed.' :
+      'Error: Your browser doesn\'t support geolocation.');
   infoWindow.open(map);
 }
 

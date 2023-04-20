@@ -18,7 +18,6 @@ body {
 }
 
 .sidenav {
-
   height: 100%;
   width: 0;
   position: fixed;
@@ -32,7 +31,6 @@ body {
 }
 
 .sidenav a {
-
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -51,7 +49,6 @@ body {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-
 }
 
 span {
@@ -75,9 +72,10 @@ h2 {
 }
 
 h4 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-family: Copperplate, sans-serif;
-  border: 2px solid gray;
+  margin: 15px;
+  border: 3px solid black;
   border-radius: 6px;
 }
 
@@ -110,34 +108,6 @@ h4 {
 
 
   }
-
-
-  #floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 25%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    line-height: 30px;
-    padding-left: 10px;
-  }
-
-
-  h2{
-    font-size: 6.5mm;
-  }
-  /*h3{*/
-  /*  font-size: 3mm;*/
-  /*}*/
-
-  h4{
-    font-size: 7mm;
-  }
-
 
   .form-control {
     flex: 1;
@@ -275,9 +245,9 @@ h4 {
   justify-content: center;
   align-items: center;
   margin-bottom: 3px;
-  border-bottom: 2px dotted gray;
   padding: 5px;
-  font-size: 1.3em;
+  font-size: 1.7em;
+  font-family: Georgia, sans-serif;
 }
 
 .trainDesignation {
@@ -286,6 +256,10 @@ h4 {
 
 .busDesignation {
   color: darkblue;
+}
+
+.timetable {
+  border-top: 3px solid lightgray;
 }
 
 /* Map Section Styles */
@@ -302,14 +276,14 @@ h4 {
   transition: color 0.3s ease-in-out;
 }
 .btn-bus {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 20px;
 }
 
 .btn-train {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 20px;
 }
 
@@ -344,6 +318,23 @@ p {
   font-weight: bold;
 }
 
+.refresh-button {
+  margin: 10px auto 10px;
+  display: block;
+  font-size: 0.9em;
+  font-family: Copperplate, sans-serif;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.refresh-button:hover {
+  background-color: lightgray;
+}
+
+.refresh-button:active {
+  background-color: grey;
+}
+
 /* Table Styles */
 .table {
   width: 100%;
@@ -351,6 +342,10 @@ p {
   margin: 5px auto;
   text-align: center;
   padding: 5px
+}
+
+th {
+  font-size: 1.2em;
 }
 
 .table th,
@@ -501,5 +496,4 @@ p {
 }
 
 .table-hover .table-warning:hover > td
-
 

@@ -25,11 +25,13 @@ In some cases, the APIs experience a CORS blocking error, resulting in CTA data 
 
 The CORS Unblock browser extension for chrome can be found here: [CORS Unblocker](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)
 
+Also, if accessing the site between ~12:45am-5:00am, it is likely there will not be any bus data available. This is not a bug! The 147 and 155 busses only run from 5am to about 12:20am the following day, so more than likely this is just the API not finding any currently running busses.
+
 ## Project TODOs:
 - [x] Refactor project to be consistent with responsive design patterns
 - [x] Finish implementing CTA API scripts to pull, parse, and display all bus, train data to the site.
 - [ ] Find new/unique fonts to ues throughout the site
 - [ ] Work on embedding images where beneficial to overall site design
-- [ ] Create links in side navigation menu to points in the DOM where the respective routes can be found
+- [x] Create links in side navigation menu to points in the DOM where the respective routes can be found
 - [ ] Decide on final order of elments in the website (ie. CTA info before or after Google map)
 - [ ] Implement MTA vs CTA statistics (which train will arrive first, which line has a higher % of current delays)
