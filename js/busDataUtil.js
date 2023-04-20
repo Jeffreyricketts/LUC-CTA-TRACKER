@@ -17,8 +17,8 @@ function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time
         return `${hours}${mins} PM`;
     }else if (hours === 12) { // Case for times during the noon hour
         return `${time} PM`;
-    } else { // Case for all AM times
-        return `${time} AM`;
+    } else if (hours <= 12) { // Case for all AM times
+        return `${hours+12 % 13}${mins} AM`; // TODO:  Tentative solution --> may need fixing
     }
 }
 

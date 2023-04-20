@@ -72,8 +72,9 @@ h2 {
 }
 
 h4 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-family: Copperplate, sans-serif;
+  margin: 15px;
   border: 2px solid gray;
   border-radius: 6px;
 }
@@ -245,7 +246,8 @@ h4 {
   align-items: center;
   margin-bottom: 3px;
   padding: 5px;
-  font-size: 1.3em;
+  font-size: 1.7em;
+  font-family: Georgia, sans-serif;
 }
 
 .trainDesignation {
@@ -274,14 +276,14 @@ h4 {
   transition: color 0.3s ease-in-out;
 }
 .btn-bus {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 20px;
 }
 
 .btn-train {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 20px;
 }
 
@@ -317,7 +319,7 @@ p {
 }
 
 .refresh-button {
-  margin: 4px auto 8px;
+  margin: 10px auto 10px;
   display: block;
   font-size: 0.9em;
   font-family: Copperplate, sans-serif;
@@ -336,6 +338,10 @@ p {
   margin: 5px auto;
   text-align: center;
   padding: 5px
+}
+
+th {
+  font-size: 1.2em;
 }
 
 .table th,
