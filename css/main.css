@@ -317,7 +317,7 @@ p {
 }
 
 .refresh-button {
-  margin: 2px auto;
+  margin: 4px auto 8px;
   display: block;
   font-size: 0.9em;
   font-family: Copperplate, sans-serif;
