@@ -244,7 +244,6 @@ h4 {
   justify-content: center;
   align-items: center;
   margin-bottom: 3px;
-  border-bottom: 2px dotted gray;
   padding: 5px;
   font-size: 1.3em;
 }
@@ -255,6 +254,10 @@ h4 {
 
 .busDesignation {
   color: darkblue;
+}
+
+.timetable {
+  border-top: 2px dotted gray;
 }
 
 /* Map Section Styles */
@@ -311,6 +314,19 @@ p {
 
 #arrival-time {
   font-weight: bold;
+}
+
+.refresh-button {
+  margin: 2px auto;
+  display: block;
+  font-size: 0.9em;
+  font-family: Copperplate, sans-serif;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.refresh-button:active {
+  background-color: lightgray;
 }
 
 /* Table Styles */
