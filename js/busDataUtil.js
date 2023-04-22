@@ -36,6 +36,9 @@ function popBusData(json, campus) {
         document.getElementById(`${campus}bus${i+1}arrtm`).innerHTML = busTimeFormat(arrivalTime);
     }
 }
+
+// INITIALIZES TIME TABLES
+
 // Stop 1027 is the stop in front of Regis hall at LSC
 loadBusDataAtStop(1027, '147,155', 'lsc');
 // Stop 1127 is the stop in front of Water Tower Place at WTC

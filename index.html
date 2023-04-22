@@ -56,6 +56,10 @@
   <section>
 
     <h4 class="center" id="lsc-timetables">Lakeshore Campus</h4>
+    <!-- TODO: This is where the auto refresh countdown timer/progress bar will go -->
+    <div>
+      <button type="button" class="refresh-button" onclick="loadTrainDataAtStop(41300, 'lsc');loadBusDataAtStop(1027, '147,155', 'lsc')">Refresh Now</button>
+    </div>
 
     <div class="center" id="trainIcon">
       <button class="btn btn-icon btn-train ml-2">
@@ -63,9 +67,6 @@
       </button>
     </div>
     <h3 class="routeDesignation trainDesignation" id="redLineDesignation">Red Line - Loyola Station</h3>
-    <div>
-      <button type="button" class="refresh-button" onclick="loadTrainDataAtStop(41300, 'lsc')">Refresh</button>
-    </div>
     <table class="table timetable" id="redLineTimeTable">
       <thead >
       <tr>
@@ -105,9 +106,6 @@
       </button>
     </div>
     <h3 class="routeDesignation busDesignation" id="BusDesignation">Sheridan & Winthrop Stop (Southbound)</h3>
-    <div>
-      <button type="button" class="refresh-button" onclick="loadBusDataAtStop(1027, '147,155', 'lsc')">Refresh</button>
-    </div>
     <table class="table timetable" id="busTimeTable">
       <thead >
       <tr>
@@ -147,15 +145,16 @@
 
     <h4 class="center" id="wtc-timetables">Water Tower Campus</h4>
 
+    <div>
+      <button type="button" class="refresh-button" onclick="loadTrainDataAtStop(41450, 'wtc');loadBusDataAtStop(1127, '147,155', 'wtc')">Refresh Now</button>
+    </div>
+
     <div class="center" id="trainIcon2">
       <button class="btn btn-icon btn-train ml-2">
         <img src="img/train-solid.svg" alt="train icon" class="train-icon">
       </button>
     </div>
     <h3 class="routeDesignation trainDesignation" id="redLineDesignation2">Red Line - Chicago/State Station</h3>
-    <div>
-      <button type="button" class="refresh-button" onclick="loadTrainDataAtStop(41450, 'wtc')">Refresh</button>
-    </div>
     <table class="table timetable" id="redLineTimeTable2">
       <thead >
       <tr>
@@ -193,9 +192,6 @@
       </button>
     </div>
     <h3 class="routeDesignation busDesignation" id="BusDesignation2">Michigan & Chestnut Stop (Northbound)</h3>
-    <div>
-      <button type="button" class="refresh-button" onclick="loadBusDataAtStop(1127, '147,155', 'wtc')">Refresh</button>
-    </div>
     <table class="table timetable" id="busTimeTable2">
       <thead >
       <tr>
@@ -265,5 +261,6 @@
 <script src="js/main.js"></script>
 <script src="js/trainDataUtil.js"></script>
 <script src="js/busDataUtil.js"></script>
+<script src="js/timerUtil.js"></script>
 </body>
 </html>
