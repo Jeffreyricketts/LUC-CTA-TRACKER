@@ -18,7 +18,7 @@ function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time
     }else if (hours === 12) { // Case for times during the noon hour
         return `${time} PM`;
     } else if (hours <= 12) { // Case for all AM times
-        return `${hours}${mins} AM`; // TODO:  Tentative solution --> may need fixing
+        return `${hours}${mins} AM`;
     }
 }
 
@@ -39,7 +39,8 @@ function popBusData(json, campus) {
 
 // INITIALIZES TIME TABLES
 
-// Stop 1027 is the stop in front of Regis hall at LSC
-loadBusDataAtStop(1027, '147,155', 'lsc');
-// Stop 1127 is the stop in front of Water Tower Place at WTC
-loadBusDataAtStop(1127, '147,155', 'wtc');
+// // Stop 1027 is the stop in front of Regis hall at LSC
+// loadBusDataAtStop(1027, '147,155', 'lsc');
+
+// // Stop 1127 is the stop in front of Water Tower Place at WTC
+// loadBusDataAtStop(1127, '147,155', 'wtc');
