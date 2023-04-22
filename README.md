@@ -1,4 +1,8 @@
 # LUC CTA Tracker
+
+![Commit Activity](https://img.shields.io/github/commit-activity/w/Jeffreyricketts/LUC-CTA-TRACKER)
+![Code Size](https://img.shields.io/github/repo-size/Jeffreyricketts/LUC-CTA-TRACKER)
+
 <sub>_COMP 324/424 Spring 2023_</sub>
 
 A handy tool to streamline the process for Loyola Students to find information regarding the CTA routes that impact them most.
@@ -31,7 +35,8 @@ Also, if accessing the site between ~12:45am-5:00am, it is likely there will not
 - [x] Refactor project to be consistent with responsive design patterns
 - [x] Activating the map  and the search field.
 - [x] Finish implementing CTA API scripts to pull, parse, and display all bus, train data to the site.
-- [ ] Find new/unique fonts to ues throughout the site
+- [ ] Find new/unique fonts to use throughout the site
+- [x] Add automatic refreshing of CTA time tables with graphical countdown
 - [ ] Work on embedding images where beneficial to overall site design
 - [x] Create links in side navigation menu to points in the DOM where the respective routes can be found
 - [ ] Decide on final order of elments in the website (ie. CTA info before or after Google map)
