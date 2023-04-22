@@ -39,5 +39,5 @@ Also, if accessing the site between ~12:45am-5:00am, it is likely there will not
 - [x] Add automatic refreshing of CTA time tables with graphical countdown
 - [ ] Work on embedding images where beneficial to overall site design
 - [x] Create links in side navigation menu to points in the DOM where the respective routes can be found
-- [ ] Decide on final order of elments in the website (ie. CTA info before or after Google map)
-- [ ] Implement MTA vs CTA statistics (which train will arrive first, which line has a higher % of current delays)
+- [x] Decide on final order of elments in the website (ie. CTA info before or after Google map)
+- [x] Add a cumulative delay calculation, and alert the user when a route is delayed (with red text and "delayed" tag) 
