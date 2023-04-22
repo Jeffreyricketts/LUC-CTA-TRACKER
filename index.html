@@ -58,7 +58,7 @@
     <h4 class="center" id="lsc-timetables">Lakeshore Campus</h4>
     <!-- TODO: This is where the auto refresh countdown timer/progress bar will go -->
     <div>
-      <button type="button" class="refresh-button" onclick="loadTrainDataAtStop(41300, 'lsc');loadBusDataAtStop(1027, '147,155', 'lsc')">Refresh Now</button>
+      <button type="button" class="refresh-button" onclick="refreshLSC()">Refresh Now</button>
     </div>
 
     <div class="center" id="trainIcon">
@@ -145,8 +145,12 @@
 
     <h4 class="center" id="wtc-timetables">Water Tower Campus</h4>
 
+    <div class="auto-refresh-container">
+
+    </div>
+
     <div>
-      <button type="button" class="refresh-button" onclick="loadTrainDataAtStop(41450, 'wtc');loadBusDataAtStop(1127, '147,155', 'wtc')">Refresh Now</button>
+      <button type="button" class="refresh-button" onclick="refreshWTC()">Refresh Now</button>
     </div>
 
     <div class="center" id="trainIcon2">
