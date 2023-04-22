@@ -59,15 +59,15 @@
     <!-- TODO: This is where the auto refresh countdown timer/progress bar will go -->
 
     <section class="center auto-refresh-container">
-      <h5 class="center">Auto Refresh in:&nbsp <span class="time-left" id="lsc-time-left">30s</span></h5>
+      <h5 class="center">Auto Refresh in:&nbsp <span class="time-left">30s</span></h5>
 
       <div class="timer-bar">
-        <div class="timer-bar-progress" id="lsc-timer-bar-progress"></div>
+        <div class="timer-bar-progress"></div>
       </div>
     </section>
 
     <div>
-      <button type="button" class="refresh-button" onclick="refreshAt('lsc')">Quick Refresh</button>
+      <button type="button" class="refresh-button" onclick="refresh()">Quick Refresh</button>
     </div>
 
     <div class="center" id="trainIcon">
@@ -155,15 +155,15 @@
     <h4 class="center" id="wtc-timetables">Water Tower Campus</h4>
 
     <section class="center auto-refresh-container">
-      <h5 class="center">Auto Refresh in:&nbsp <span class="time-left" id="wtc-time-left">30s</span></h5>
+      <h5 class="center">Auto Refresh in:&nbsp <span class="time-left">30s</span></h5>
 
       <div class="timer-bar">
-        <div class="timer-bar-progress" id="wtc-timer-bar-progress"></div>
+        <div class="timer-bar-progress"></div>
       </div>
     </section>
 
     <div>
-      <button type="button" class="refresh-button" onclick="refreshAt('wtc')">Quick Refresh</button>
+      <button type="button" class="refresh-button" onclick="refresh()">Quick Refresh</button>
     </div>
 
     <div class="center" id="trainIcon2">
@@ -249,15 +249,16 @@
 
   <section>
     <h2 class="center">Delay Percentage</h2>
-    <div class="alert alert-danger" role="alert">
-      The current public transportation has a delay of <span id="delay-percentage">0%</span>.
+    <div class="center alert alert-danger" role="alert">
+      Cumulative delay for all CTA trains and busses above: &nbsp<span id="delay-percentage">0%</span>.
     </div>
   </section>
 
-  <section>
-    <h2 class="center">Arrival Time</h2>
-    <p class="center">The next bus will arrive in <span id="arrival-time"></span> minutes.</p>
-  </section>
+<!--  TODO: We may not need this?-->
+<!--  <section>-->
+<!--    <h2 class="center">Arrival Time</h2>-->
+<!--    <p class="center">The next bus will arrive in <span id="arrival-time"></span> minutes.</p>-->
+<!--  </section>-->
 
 </main>
 
@@ -279,5 +280,6 @@
 <script src="js/trainDataUtil.js"></script>
 <script src="js/busDataUtil.js"></script>
 <script src="js/timerUtil.js"></script>
+<script src="js/delayUtil.js"></script>
 </body>
 </html>

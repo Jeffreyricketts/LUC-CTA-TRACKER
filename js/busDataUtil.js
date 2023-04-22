@@ -26,6 +26,7 @@ function popBusData(json, campus) {
     let routeNum, direction, dest, arrivalTime;
     let prediction = (JSON.parse(json)['bustime-response'].prd);
     for(let i = 0; i < prediction.length; i++) {
+        totalTimes++;
         let prd = prediction[i];
         routeNum = prd.rt;
         direction = prd.rtdir;
@@ -34,13 +35,13 @@ function popBusData(json, campus) {
         document.getElementById(`${campus}bus${i+1}name`).innerHTML = routeNum;
         document.getElementById(`${campus}bus${i+1}route`).innerHTML = `${direction} towards ${dest}`;
         document.getElementById(`${campus}bus${i+1}arrtm`).innerHTML = busTimeFormat(arrivalTime);
+        if(prd.dly) {
+            totalDelays++;
+            document.getElementById(`${campus}bus${i+1}arrtm`).innerHTML = `${busTimeFormat(arrivalTime)} (delayed)`;
+            document.getElementById(`${campus}bus${i+1}arrtm`).style.color = 'red';
+
+        }
     }
 }
-
-// INITIALIZES TIME TABLES
-
 // // Stop 1027 is the stop in front of Regis hall at LSC
-// loadBusDataAtStop(1027, '147,155', 'lsc');
-
 // // Stop 1127 is the stop in front of Water Tower Place at WTC
-// loadBusDataAtStop(1127, '147,155', 'wtc');
