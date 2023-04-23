@@ -31,9 +31,11 @@ The CORS Unblock browser extension for chrome can be found here: [CORS Unblocker
 
 Also, if accessing the site between ~12:45am-5:00am, it is likely there will not be any bus data available. This is not a bug! The 147 and 155 busses only run from 5am to about 12:20am the following day, so more than likely this is just the API not finding any currently running busses.
 
+
 ## Project TODOs:
 - [x] Refactor project to be consistent with responsive design patterns
 - [x] Activating the map  and the search field.
+- [x] AEnabling choose either the bus or the train to reach the destination.
 - [x] Finish implementing CTA API scripts to pull, parse, and display all bus, train data to the site.
 - [ ] Find new/unique fonts to use throughout the site
 - [x] Add automatic refreshing of CTA time tables with graphical countdown
