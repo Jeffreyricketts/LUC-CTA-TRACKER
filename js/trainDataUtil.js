@@ -23,6 +23,7 @@ function popTrainData(json, campus) {
             totalDelays++;
             document.getElementById(`${campus}train${i+1}arrtm`).innerHTML = `${arrivalTime} (delayed)`;
             document.getElementById(`${campus}train${i+1}arrtm`).style.color = 'red';
+            document.getElementById(`${campus}train${i+2}arrtm`).style.color = 'black';
         }
     }
 }
