@@ -53,6 +53,19 @@
     <!--Google Map-->
     <div id="map"></div>
   </section>
+  <div class="center">
+<!--    <select id="change_transit" onchange="change_tras()">-->
+<!--      <option  value="" disabled selected> Choose Transition</option>-->
+<!--      <option  value="1">BUS</option>-->
+<!--      <option  value="2">TRAIN</option>-->
+<!--    </select>-->
+    <button onclick="change_tras(1)"   class="btn btn-icon btn-bus mr-2">
+      <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon" height="20">
+    </button>
+    <button onclick="change_tras(2)"  class="btn btn-icon btn-train ml-2">
+      <img src="img/train-solid.svg" alt="train icon" class="train-icon" height="20">
+    </button>
+  </div>
   <section>
 
     <h4 class="center" id="lsc-timetables">Lakeshore Campus</h4>

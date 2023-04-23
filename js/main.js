@@ -56,7 +56,32 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 // [START maps_directions_travel_modes]
-function initMap() {
+const transportation = {
+  mode: 'BUS',
+  setMode(value) {
+    if (value === 1) {
+      this.mode = 'BUS';
+    } else if (value === 2) {
+      this.mode = 'SUBWAY';
+    } else {
+      this.mode = 'BUS';
+    }
+  },
+
+  getMode() {
+    return this.mode;
+  },
+};
+
+function change_tras(modeValue) {
+  transportation.setMode(modeValue);
+  const mode = transportation.getMode();
+  console.log(mode);
+  return mode;
+}
+
+
+function initMap(mode) {
   const directionsRenderer = new google.maps.DirectionsRenderer();
   const directionsService = new google.maps.DirectionsService();
   var latitude;
@@ -74,20 +99,27 @@ function initMap() {
     center: { lat: 41.9756854, lng: -87.6523867 },
   });
   directionsRenderer.setMap(map);
-  calculateAndDisplayRoute(directionsService, directionsRenderer,latitude,longitude);
+  calculateAndDisplayRoute(directionsService, directionsRenderer,latitude,longitude,transportation.mode);
   document.getElementById("select_camp").addEventListener("change", () => {
-    calculateAndDisplayRoute(directionsService, directionsRenderer,latitude,longitude);
+    calculateAndDisplayRoute(directionsService, directionsRenderer,latitude,longitude,transportation.mode);
   });
 
 }
 
-function calculateAndDisplayRoute(directionsService, directionsRenderer, lang, long) {
+
+
+
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer, lang, long,change_transit) {
   const selectedMode = document.getElementById("mode").value;
   // I will get the current location from current user location.
+  //
 
-
+  console.log('mode is ', transportation.mode);
+  change_transit = transportation.mode;
   console.log(lang);
   console.log(long);
+
   var select_campus = document.getElementById('select_camp').value;
   // console.log('Here seclect campus');
   // console.log(select_campus);
@@ -114,7 +146,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, lang, l
         // "property."
         transitOptions: {
           // departureTime: new Date(1337675679473),
-          modes: ['BUS'],
+          modes: [transportation.getMode()],
           routingPreference: 'FEWER_TRANSFERS'
         },
         travelMode: google.maps.TravelMode[selectedMode],
@@ -134,7 +166,7 @@ function calcRoute() {
   var lng = position.coords.longitude;
   var start = new google.maps.LatLng(lat, lng);
   var travelMode =document.getElementById("mode").addEventListener("change", () => {
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
+    calculateAndDisplayRoute(directionsService, directionsRenderer, lang, long,change_transit);
   });
   var end = new google.maps.LatLng(41.9989483, -87.6608341);
   var request = {
@@ -175,3 +207,4 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
