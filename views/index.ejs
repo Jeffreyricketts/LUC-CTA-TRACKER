@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style/style.css">
+
+
+</head>
+<body>
+<div class="banner">
+  <div class="banner__content">
+    <div class="banner__text">
+      <section>
+        <!-- Side Nav -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#lsc-timetables">Lakeshore Campus</a>
+          <a href="#wtc-timetables">Water Tower Campus</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+        <!-- Title and Search -->
+        <h2 class="center">LUC CTA Tracker</h2>
+        <div class="search-container">
+<!--  Do not touch this div         -->
+          <div hidden="hidden" id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+              <option selected value="TRANSIT">Transit</option>
+            </select>
+          </div>
+<!--    end      -->
+
+          <select id="select_camp" class="form-control" name="option">
+       <option  disabled selected >Search your destination</option>
+            <option  value="1">Lakeshore Campus</option>
+            <option  value="2">Water Tower Campus</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Search</button>
+
+        </div>
+      </section></div>
+    </div>
+  </div>
+</div>
+
+<!-- Index starts here -->
+
+<h1>Hi <%= name %></h1>
+    <form action="/logout?_method=DELETE" method="POST">
+        <button type="submit">Log Out</button>
+    </form>
+</body>
+</html>
+
