@@ -2,7 +2,7 @@
 Then, go to http://localhost:3000/login in web browser */
 if (process.env.NODE_ENV !== 'production'){
     require('dotenv').config()
-}
+} 
 //Imports
 const express = require('express')
 const app = express()
@@ -35,6 +35,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public'))) // 'public' points to CSS functionality in the module //
+app.use(express.static(path.join(__dirname, 'js')))
 
 app.get('/',checkAuthenticated, (req, res) => {
     res.render('index.ejs', {name: req.user.name})
@@ -96,12 +97,4 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
 app.listen(3000)

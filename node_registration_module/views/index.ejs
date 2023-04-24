@@ -15,8 +15,12 @@
         <!-- Side Nav -->
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h3>Hey <%= name %></h3>
           <a href="#lsc-timetables">Lakeshore Campus</a>
           <a href="#wtc-timetables">Water Tower Campus</a>
+          <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit" class="btn-secondary">Log Out</button>
+        </form>
         </div>
         <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
         <!-- Title and Search -->
@@ -44,12 +48,245 @@
   </div>
 </div>
 
+<main class="container">
+  <section>
+    <!--Google Map-->
+    <div id="map"></div>
+  </section>
+  <section>
+
+    <h4 class="center" id="lsc-timetables">Lakeshore Campus</h4>
+    <!-- TODO: This is where the auto refresh countdown timer/progress bar will go -->
+
+    <section class="center auto-refresh-container">
+      <h5 class="center">Auto Refresh in:&nbsp <span class="time-left" id="lsc-time-left">30s</span></h5>
+
+      <div class="timer-bar">
+        <div class="timer-bar-progress" id="lsc-timer-bar-progress"></div>
+      </div>
+    </section>
+
+    <div>
+      <button type="button" class="refresh-button" onclick="refreshAt('lsc')">Quick Refresh</button>
+    </div>
+
+    <div class="center" id="trainIcon">
+      <button class="btn btn-icon btn-train ml-2">
+        <img src="img/train-solid.svg" alt="train icon" class="train-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation trainDesignation" id="redLineDesignation">Red Line - Loyola Station</h3>
+    <table class="table timetable" id="redLineTimeTable">
+      <thead >
+      <tr>
+        <th >Route</th>
+        <th>Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr> <!-- Error messages inserted into first table element to display if API does not load -->
+        <td id="lsctrain1route">CTA Train Data Unavailable</td>
+        <td id="lsctrain1arrtm">CTA Train Data Unavailable</td>
+      </tr>
+      <tr>
+        <td id="lsctrain2route"></td>
+        <td id="lsctrain2arrtm"></td>
+      </tr>
+      <tr>
+        <td id="lsctrain3route"></td>
+        <td id="lsctrain3arrtm"></td>
+      </tr>
+      <tr>
+        <td id="lsctrain4route"></td>
+        <td id="lsctrain4arrtm"></td>
+      </tr>
+      <tr>
+        <td id="lsctrain5route"></td>
+        <td id="lsctrain5arrtm"></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+    <div class="center">
+      <button class="btn btn-icon btn-bus mr-2" id="busIcon">
+        <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation busDesignation" id="BusDesignation">Sheridan & Winthrop Stop (Southbound)</h3>
+    <table class="table timetable" id="busTimeTable">
+      <thead >
+      <tr>
+        <th >Bus</th>
+        <th >Route</th>
+        <th >Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="lscbus1name"> CTA Bus Data Unavailable</td>
+        <td id="lscbus1route">CTA Bus Data Unavailable</td>
+        <td id="lscbus1arrtm">CTA Bus Data Unavailable</td>
+      </tr>
+      <tr>
+        <td id="lscbus2name"></td>
+        <td id="lscbus2route"></td>
+        <td id="lscbus2arrtm"></td>
+      </tr>
+      <tr>
+        <td id="lscbus3name"></td>
+        <td id="lscbus3route"></td>
+        <td id="lscbus3arrtm"></td>
+      </tr>
+      <tr>
+        <td id="lscbus4name"></td>
+        <td id="lscbus4route"></td>
+        <td id="lscbus4arrtm"></td>
+      </tr>
+      <tr>
+        <td id="lscbus5name"></td>
+        <td id="lscbus5route"></td>
+        <td id="lscbus5arrtm"></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h4 class="center" id="wtc-timetables">Water Tower Campus</h4>
+
+    <section class="center auto-refresh-container">
+      <h5 class="center">Auto Refresh in:&nbsp <span class="time-left" id="wtc-time-left">30s</span></h5>
+
+      <div class="timer-bar">
+        <div class="timer-bar-progress" id="wtc-timer-bar-progress"></div>
+      </div>
+    </section>
+
+    <div>
+      <button type="button" class="refresh-button" onclick="refreshAt('wtc')">Quick Refresh</button>
+    </div>
+
+    <div class="center" id="trainIcon2">
+      <button class="btn btn-icon btn-train ml-2">
+        <img src="img/train-solid.svg" alt="train icon" class="train-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation trainDesignation" id="redLineDesignation2">Red Line - Chicago/State Station</h3>
+    <table class="table timetable" id="redLineTimeTable2">
+      <thead >
+      <tr>
+        <th >Route</th>
+        <th>Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="wtctrain1route">CTA Train Data Unavailable</td>
+        <td id="wtctrain1arrtm">CTA Train Data Unavailable</td>
+      </tr>
+      <tr>
+        <td id="wtctrain2route"></td>
+        <td id="wtctrain2arrtm"></td>
+      </tr>
+      <tr>
+        <td id="wtctrain3route"></td>
+        <td id="wtctrain3arrtm"></td>
+      </tr>
+      <tr>
+        <td id="wtctrain4route"></td>
+        <td id="wtctrain4arrtm"></td>
+      </tr>
+      <tr>
+        <td id="wtctrain5route"></td>
+        <td id="wtctrain5arrtm"></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="center">
+      <button class="btn btn-icon btn-bus mr-2" id="busIcon2">
+        <img src="img/bus-solid.svg" alt="Bus icon" class="bus-icon">
+      </button>
+    </div>
+    <h3 class="routeDesignation busDesignation" id="BusDesignation2">Michigan & Chestnut Stop (Northbound)</h3>
+    <table class="table timetable" id="busTimeTable2">
+      <thead >
+      <tr>
+        <th >Bus</th>
+        <th >Route</th>
+        <th >Arrival Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="wtcbus1name">CTA Bus Data Unavailable</td>
+        <td id="wtcbus1route">CTA Bus Data Unavailable</td>
+        <td id="wtcbus1arrtm">CTA Bus Data Unavailable</td>
+      </tr>
+      <tr>
+        <td id="wtcbus2name"></td>
+        <td id="wtcbus2route"></td>
+        <td id="wtcbus2arrtm"></td>
+      </tr>
+      <tr>
+        <td id="wtcbus3name"></td>
+        <td id="wtcbus3route"></td>
+        <td id="wtcbus3arrtm"></td>
+      </tr>
+      <tr>
+        <td id="wtcbus4name"></td>
+        <td id="wtcbus4route"></td>
+        <td id="wtcbus4arrtm"></td>
+      </tr>
+      <tr>
+        <td id="wtcbus5name"></td>
+        <td id="wtcbus5route"></td>
+        <td id="wtcbus5arrtm"></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="center">Delay Percentage</h2>
+    <div class="alert alert-danger" role="alert">
+      The current public transportation has a delay of <span id="delay-percentage">0%</span>.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="center">Arrival Time</h2>
+    <p class="center">The next bus will arrive in <span id="arrival-time"></span> minutes.</p>
+  </section>
+
+</main>
+
+<footer class="bg-primary text-white py-3">
+  <div class="container text-center">
+    <p class="center">&copy; 2023 LUC CTA</p>
+  </div>
+</footer>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeyI491Z76t3oIXEV29ANCPVD6qgMLA3M&callback=initMap&v=weekly" async defer></script>
+
+<script>
+
+</script>
+
+<script src="js/main.js"></script>
+<script src="js/trainDataUtil.js"></script>
+<script src="js/busDataUtil.js"></script>
+<script src="js/timerUtil.js"></script>
+
+
 <!-- Index starts here -->
 
-<h1>Hi <%= name %></h1>
+<!--<h1>Hi <%= name %></h1>
     <form action="/logout?_method=DELETE" method="POST">
         <button type="submit">Log Out</button>
-    </form>
+    </form> -->
 </body>
 </html>
 
