@@ -96,4 +96,12 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
 app.listen(3000)
