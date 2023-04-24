@@ -1,54 +1,3 @@
-// Use JavaScript to track public transportation in real-time
-// Here is an example of using the Google Maps API to display a map
-// function initMap() {
-//   var directionsService = new google.maps.DirectionsService();
-//   var directionsRenderer = new google.maps.DirectionsRenderer();
-//   // Create a new map centered on the user's current location
-//   //   if (navigator.geolocation) {
-//   //   navigator.geolocation.getCurrentPosition(function(position) {
-//   //     var lat = position.coords.latitude;
-//   //     var lng = position.coords.longitude;
-//   //     var map = new google.maps.Map(document.getElementById('map'), {
-//   //       center: {lat: lat, lng: lng},
-//   //       zoom: 12,
-//   //     });
-//   //
-//   //     // Add a marker at the user's current location
-//   //     // var marker = new google.maps.Marker({
-//   //     //   position: {lat: lat, lng: lng},
-//   //     //   map: map,
-//   //     //   title: 'You are here'
-//   //     // });
-//   //     const transitLayer = new google.maps.TransitLayer();
-//   //
-//   //     transitLayer.setMap(map);
-//   //     var busNumbers = [];
-//   //     for (var i = 0; i < buses.length; i++) {
-//   //       busNumbers.push(buses[i].number);
-//   //     }
-//   //     console.log(busNumbers.map())
-//   //   }, function() {
-//   //     handleLocationError(true, infoWindow, map.getCenter());
-//   //   });
-//   // } else {
-//   //   // Browser doesn't support Geolocation
-//   //   handleLocationError(false, infoWindow, map.getCenter());
-//   // }
-//   var lat = position.coords.latitude;
-//   var lng = position.coords.longitude;
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//
-//     zoom: 12,
-//     center: { lat: lat, lng: lng },
-//   });
-//   directionsRenderer.setMap(map);
-//   calculateAndDisplayRoute(directionsService, directionsRenderer);
-//   document.getElementById("mode").addEventListener("change", () => {
-//     calculateAndDisplayRoute(directionsService, directionsRenderer);
-//   });
-// }
-
-
 
 /**
  * @license
@@ -73,6 +22,7 @@ const transportation = {
   },
 };
 
+// setter and getter for transportation mode.
 function change_tras(modeValue) {
   transportation.setMode(modeValue);
   const mode = transportation.getMode();
@@ -80,28 +30,62 @@ function change_tras(modeValue) {
   return mode;
 }
 
+const current_location = {
+  latitude:0,
+  longitude:0,
+  setdir(latitude,longitude){
+    this.latitude=latitude;
+    this.longitude=longitude;
+  },
+  get_lat(){
+    return this.latitude
+  },
+  get_long(){
+    return this.longitude;
+  }
+}
 
-function initMap(mode) {
-  const directionsRenderer = new google.maps.DirectionsRenderer();
-  const directionsService = new google.maps.DirectionsService();
+function update_dir_lat(lat,long){
+  current_location.setdir(lat,long);
+  const lat_ = current_location.get_lat();
+  const  long_ = current_location.get_long();
+
+  return lat_;
+}
+function update_dir_long(lat,long){
+  current_location.setdir(lat,long);
+  // const lat_ = current_location.get_lat();
+  const  long_ = current_location.get_long();
+  return long_;
+}
+function initMap() {
+  const directionsRenderer = new google.maps.DirectionsRenderer(); // bus and train direction
+  const directionsService = new google.maps.DirectionsService();// transportation
   var latitude;
   var longitude;
+  var update_lat;
+  var update_long;
   navigator.geolocation.getCurrentPosition(
       function (position) {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
-        console.log('Latitude:', position.coords.latitude);
-        console.log('Longitude:', position.coords.longitude);
+        //setter for current position
+        update_lat = update_dir_lat(latitude,longitude);
+        update_long = update_dir_long(latitude,longitude);
+
       });
 
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 14,
-    center: { lat: 41.9756854, lng: -87.6523867 },
+    zoom: 10,
+    center: { lat: 41.8337329, lng: -87.7319639 },
   });
+
   directionsRenderer.setMap(map);
-  calculateAndDisplayRoute(directionsService, directionsRenderer,latitude,longitude,transportation.mode);
+  console.log('lat updated :', update_lat)
+  console.log('long updated :', update_long)
+  calculateAndDisplayRoute(directionsService, directionsRenderer,update_lat,update_long,transportation.mode);
   document.getElementById("select_camp").addEventListener("change", () => {
-    calculateAndDisplayRoute(directionsService, directionsRenderer,latitude,longitude,transportation.mode);
+    calculateAndDisplayRoute(directionsService, directionsRenderer,update_lat,update_long,transportation.mode);
   });
 
 }
@@ -117,8 +101,8 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, lang, l
 
   console.log('mode is ', transportation.mode);
   change_transit = transportation.mode;
-  console.log(lang);
-  console.log(long);
+  console.log('is changed ? ',lang);
+  console.log('is changed ? ',long);
 
   var select_campus = document.getElementById('select_camp').value;
   // console.log('Here seclect campus');
@@ -138,8 +122,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, lang, l
 
   directionsService
       .route({
-        origin: {lat: 41.9756854, lng: -87.6523867},
-
+        origin: {lat: lang, lng: long},
         destination: {lat: lat_d, lng: lon_d},
         // Note that Javascript allows us to access the constant
         // using square brackets and a string value as its
