@@ -1,12 +1,12 @@
-async function loadBusDataAtStop(stopID, routeID, campus) {
-    try {
-        const response = await fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
-        const json = await response.text();
-        popBusData(json, campus);
-        console.log('CTA bus data received successfully!');
-    } catch (err) {
-        console.log(err);
-    }
+const loadBusDataAtStop = (stopID, routeID, campus) => {
+    const busData = fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
+    busData.then(response => response.json())
+        .then(jsonData => {
+            console.log(jsonData);
+            popBusData(jsonData, campus)
+            console.log('CTA bus data received successfully!');
+        });
+    return busData;
 }
 
 function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time with am/pm designation
@@ -24,7 +24,7 @@ function busTimeFormat(time) { // Function to convert 24 hr time to 12 hour time
 
 function popBusData(json, campus) {
     let routeNum, direction, dest, arrivalTime;
-    let prediction = (JSON.parse(json)['bustime-response'].prd);
+    let prediction = (json['bustime-response'].prd);
     for(let i = 0; i < prediction.length; i++) {
         totalTimes++;
         let prd = prediction[i];
@@ -43,5 +43,7 @@ function popBusData(json, campus) {
         }
     }
 }
+
+loadBusDataAtStop(1027, '147,155', 'lsc');
 // // Stop 1027 is the stop in front of Regis hall at LSC
 // // Stop 1127 is the stop in front of Water Tower Place at WTC
