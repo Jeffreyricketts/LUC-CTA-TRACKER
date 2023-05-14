@@ -24,11 +24,14 @@ function timer(){
     }, 1000);
 }
 
+const busKey = "";
+const trainKey = "";
+
 function refresh() {
-    loadTrainDataAtStop(41300, 'lsc');
-    loadBusDataAtStop(1027, '147,155', 'lsc');
-    loadTrainDataAtStop(41450, 'wtc');
-    loadBusDataAtStop(1127, '147,155', 'wtc');
+    loadTrainDataAtStop(41300, 'lsc', trainKey);
+    loadBusDataAtStop(1027, '147,155', 'lsc', busKey);
+    loadTrainDataAtStop(41450, 'wtc', trainKey);
+    loadBusDataAtStop(1127, '147,155', 'wtc', busKey);
     updateDelayPercentage();
 }
 

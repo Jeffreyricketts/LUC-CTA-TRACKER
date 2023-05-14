@@ -1,5 +1,5 @@
-const loadBusDataAtStop = (stopID, routeID, campus) => {
-    const busData = fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=aLpvnDLJJwdLHdJUCNpf594yF&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
+const loadBusDataAtStop = (stopID, routeID, campus, key) => {
+    const busData = fetch(`http://www.ctabustracker.com/bustime/api/v2/getpredictions?key=${key}&stpid=${stopID}&rt=${routeID}&top=5&format=json`);
     busData.then(response => response.json())
         .then(jsonData => {
             console.log(jsonData);
@@ -44,6 +44,5 @@ function popBusData(json, campus) {
     }
 }
 
-loadBusDataAtStop(1027, '147,155', 'lsc');
 // // Stop 1027 is the stop in front of Regis hall at LSC
 // // Stop 1127 is the stop in front of Water Tower Place at WTC

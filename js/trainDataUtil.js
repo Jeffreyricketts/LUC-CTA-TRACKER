@@ -1,5 +1,5 @@
-const loadTrainDataAtStop = (stopID, campus) => {
-    const trainData = fetch(`https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=dd4939ade14e4384836da74b33ef078a&mapid=${stopID}&max=5&outputType=JSON`);
+const loadTrainDataAtStop = (stopID, campus, key) => {
+    const trainData = fetch(`https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=${key}&mapid=${stopID}&max=5&outputType=JSON`);
     trainData.then(response => response.json())
         .then(jsonData => {
             popTrainData(jsonData, campus)
